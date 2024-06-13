@@ -5,3 +5,4 @@ The 2BA Webservices are elementary, lightweight and fast services to allow your 
 ```{toctree}
 :maxdepth: 2
 introduction.md
+error.md

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error codes &mdash; 2BA.SphinxDemo 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/2ba.css?v=135e0225" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #6DBE00" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Error codes</a><ul>
+<li><a class="reference internal" href="#http-status-codes">HTTP Status Codes</a></li>
+<li><a class="reference internal" href="#error-message">Error message</a></li>
+<li><a class="reference internal" href="#json">JSON</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #6DBE00" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">2BA.SphinxDemo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Error codes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/webservices/error.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="error-codes">
+<h1>Error codes<a class="headerlink" href="#error-codes" title="Link to this heading"></a></h1>
+<section id="http-status-codes">
+<h2>HTTP Status Codes<a class="headerlink" href="#http-status-codes" title="Link to this heading"></a></h2>
+<p>The Webservices use HTTP status codes to inform the client application about the response.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head"><p>Text</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200</p></td>
+<td><p>OK</p></td>
+<td><p>Successful response.</p></td>
+</tr>
+<tr class="row-odd"><td><p>400</p></td>
+<td><p>BadRequest</p></td>
+<td><p>The request was invalid. The accompanying message can explain why.</p></td>
+</tr>
+<tr class="row-even"><td><p>401</p></td>
+<td><p>Unauthorized</p></td>
+<td><p>The user is not authorized for this service. The accompanying message can explain why or what service.</p></td>
+</tr>
+<tr class="row-odd"><td><p>500</p></td>
+<td><p>InternalServerError</p></td>
+<td><p>An unexpected error has occurred. Contact us with the error number from the message.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="error-message">
+<h2>Error message<a class="headerlink" href="#error-message" title="Link to this heading"></a></h2>
+<p>In addition to the http status code, a message containing extra information is sent to the application. This message consists of the fields IsError (boolean), ErrorMessage (string) and Status (string). The Error Message contains information that may help troubleshoot the issue. The Status field contains a textual representation of the http status code.</p>
+<p>Example:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s">&quot;IsError&quot;</span><span class="p">:</span><span class="w"> </span><span class="k">true</span>
+<span class="w">    </span><span class="s">&quot;ErrorMessage&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Incorrect format for featureFilter: {\&quot;EF001360\&quot;:\&quot;EV000278\&quot; fzljk dfjf l;j a }&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;BadRequest&quot;</span><span class="err">`</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="json">
+<h2>JSON<a class="headerlink" href="#json" title="Link to this heading"></a></h2>
+<p>It is not possible to filter the response based on HTTP status codes if jsonp was used to invoke the services. In this case, you can make use of the returned data object.</p>
+<p>Example:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">callback</span><span class="p">(</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="s2">&quot;IsError&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">		</span><span class="s2">&quot;ErrorMessage&quot;</span><span class="o">:</span><span class="s2">&quot;Incorrect format for featureFilter:{\&quot;EF003356\&quot;:\&quot;EV005821&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="s2">&quot;Status&quot;</span><span class="o">:</span><span class="s2">&quot;BadRequest&quot;</span>
+<span class="w">	</span><span class="p">},</span>
+<span class="w">	</span><span class="mf">400</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">IsError</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="nx">alert</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">Status</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">ErrorMessage</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">		</span><span class="c1">// Do something with data</span>
+<span class="w">	</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, TTT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
