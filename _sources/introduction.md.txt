@@ -45,3 +45,20 @@ The service endpoint is constructed with only the major version number in it. E.
 ### Example
 
 To give you an impression of the API, we have provided a small C# code sample in which the function DetailsByGLNAndTradeItemId from the Product service is invoked via JSON.
+
+```csharp
+var postData = string.Format("?gln={0}&tradeItemId={1}", item.SupplierGLN, item.SuppliersTradeItemId);
+var requestUri =  "/json/Product/DetailsByGLNAndTradeItemId" + postData;
+var request = (HttpWebRequest)WebRequest.Create(Settings.Default.ApiUrl + requestUri);
+ 
+request.Method = "GET";
+request.Headers.Add("Authorization", "Bearer " + AuthorisationService.CurrentAuthorisation.AccessToken);
+ 
+var responseStream = request.GetResponse().GetResponseStream();
+var reader = new StreamReader(responseStream);
+var data = reader.ReadToEnd();
+ 
+var jobj = JObject.Parse(data);
+item.ManufacturerName = (string)jobj["Manufacture"];
+item.ManufacturerTradeItemId = (string)jobj["Productcode"];// ... 
+```

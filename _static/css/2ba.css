@@ -12,7 +12,9 @@
 }
 
 .wy-menu-vertical a,
-.wy-menu-vertical a:hover button.toctree-expand {
+.wy-menu-vertical a:hover button.toctree-expand,
+.wy-menu-vertical li.current > a:hover button.toctree-expand, 
+.wy-menu-vertical li.on a:hover button.toctree-expand {
     color: #fff;
 }
 
