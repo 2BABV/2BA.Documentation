@@ -28,3 +28,16 @@ import sphinx_rtd_theme
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+
+html_context = {
+    'theme_logo_only': True,
+    'theme_display_version': True,
+}
+
+html_logo = "_static/logo.svg"
+html_favicon = "_static/favicon.ico"
+
+httpexample_scheme = 'https'
+
+autosectionlabel_prefix_document = True
