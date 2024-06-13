@@ -1,6 +1,6 @@
 # Handleiding
 
 ```{toctree}
-:maxdepth: -1
+:maxdepth: 2
 search.md
 productdetails.md
