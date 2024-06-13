@@ -42,7 +42,7 @@ html_theme_options = {
 }
 
 html_css_files = [
-    '_static/css/2ba.css',
+    'css/2ba.css',
 ]
 
 html_context = {
