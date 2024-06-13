@@ -1,7 +1,15 @@
+.wy-side-nav-search > a:hover {
+    background: none;
+}
+
 .wy-side-scroll {
     background-color: #195AA7;
 }
 
 .wy-nav-side {
     padding-bottom: 0;
+}
+
+.wy-menu-vertical a:hover {
+    background: none;
 }
