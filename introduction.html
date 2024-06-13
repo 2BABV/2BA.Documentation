@@ -134,20 +134,20 @@ Example: <a class="reference external" href="https://api.2ba.nl/1/json/Product/S
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
 <p>To give you an impression of the API, we have provided a small C# code sample in which the function DetailsByGLNAndTradeItemId from the Product service is invoked via JSON.</p>
-<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="kt">var</span><span class="w"> </span><span class="n">postData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span><span class="p">.</span><span class="n">Format</span><span class="p">(</span><span class="s">&quot;?gln={0}&amp;tradeItemId={1}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">SupplierGLN</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="p">.</span><span class="n">SuppliersTradeItemId</span><span class="p">);</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">requestUri</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="s">&quot;/json/Product/DetailsByGLNAndTradeItemId&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">postData</span><span class="p">;</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="n">Create</span><span class="p">(</span><span class="n">Settings</span><span class="p">.</span><span class="n">Default</span><span class="p">.</span><span class="n">ApiUrl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">requestUri</span><span class="p">);</span>
-<span class="w"> </span>
-<span class="n">request</span><span class="p">.</span><span class="n">Method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GET&quot;</span><span class="p">;</span>
-<span class="n">request</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&quot;Authorization&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bearer &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">AuthorisationService</span><span class="p">.</span><span class="n">CurrentAuthorisation</span><span class="p">.</span><span class="n">AccessToken</span><span class="p">);</span>
-<span class="w"> </span>
-<span class="kt">var</span><span class="w"> </span><span class="n">responseStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="n">GetResponse</span><span class="p">().</span><span class="n">GetResponseStream</span><span class="p">();</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="n">responseStream</span><span class="p">);</span>
-<span class="kt">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">();</span>
-<span class="w"> </span>
-<span class="kt">var</span><span class="w"> </span><span class="n">jobj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JObject</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
-<span class="n">item</span><span class="p">.</span><span class="n">ManufacturerName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">jobj</span><span class="p">[</span><span class="s">&quot;Manufacture&quot;</span><span class="p">];</span>
-<span class="n">item</span><span class="p">.</span><span class="n">ManufacturerTradeItemId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">jobj</span><span class="p">[</span><span class="s">&quot;Productcode&quot;</span><span class="p">];</span><span class="c1">// ... </span>
+<div class="code" style="border: 1px solid #6dbe00">
+```csharp
+var postData = string.Format("?gln={0}&tradeItemId={1}", item.SupplierGLN, item.SuppliersTradeItemId);
+var requestUri =  "/json/Product/DetailsByGLNAndTradeItemId" + postData;
+var request = (HttpWebRequest)WebRequest.Create(Settings.Default.ApiUrl + requestUri);
+<p>request.Method = “GET”;
+request.Headers.Add(“Authorization”, “Bearer “ + AuthorisationService.CurrentAuthorisation.AccessToken);</p>
+<p>var responseStream = request.GetResponse().GetResponseStream();
+var reader = new StreamReader(responseStream);
+var data = reader.ReadToEnd();</p>
+<p>var jobj = JObject.Parse(data);
+item.ManufacturerName = (string)jobj[“Manufacture”];
+item.ManufacturerTradeItemId = (string)jobj[“Productcode”];// …</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </section>
@@ -156,9 +156,7 @@ Example: <a class="reference external" href="https://api.2ba.nl/1/json/Product/S
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="What does 2BA offer?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 
