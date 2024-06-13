@@ -1,4 +1,4 @@
-What does 2BA offer?
+2BA documentation
 ====================
 
 Here you will find documentation on the following topics:
