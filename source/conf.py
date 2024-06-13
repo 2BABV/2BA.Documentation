@@ -33,6 +33,7 @@ html_static_path = ['_static']
 html_context = {
     'theme_logo_only': True,
     'theme_display_version': True,
+    'style_nav_header_background': '#6DBE00',
 }
 
 html_logo = "_static/images/logo.png"
