@@ -15,7 +15,7 @@ Unifeed is een onderdeel uit de 2BA DaaS referentie architectuur. Voor een impre
 <button class="btn" name="button" onclick="https://unifeed.2ba.nl/">Naar Unifeed</button>
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 manual/index.md
 architecture.md
 changelog.md
