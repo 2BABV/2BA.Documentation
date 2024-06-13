@@ -9,11 +9,13 @@ Unifeed biedt een gebruikersinterface om snel te zoeken en te filteren binnen de
 </a>
 Klik op afbeelding voor volledig scherm
 
+
 Unifeed is een onderdeel uit de 2BA DaaS referentie architectuur. Voor een impressie van de werking van de Unifeed zoekmachine in combinatie met een calculatieprogramma kan hier het 2BA demonstratieprogramma [DemoCalc](https://www.2ba.nl/over-2ba/wat-biedt-2ba/voor-de-installateur/2ba-productviewers-installateur/democalc-installateur "DemoCalc") worden gestart.
 
 <button class="btn" name="button" onclick="https://unifeed.2ba.nl/">Naar Unifeed</button>
 
 ```{toctree}
-:maxdepth: 2
-* :ref:`search`
+    manual/index.md
+    architecture.md
+    changelog.md
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2BA DaaS Reference Architecture &mdash; 2BA.SphinxDemo 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/2ba.css?v=135e0225" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #6DBE00" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../webservices/index.html">Webservices</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Unifeed</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#alle-informatie-uit-2ba-onder-de-knop">Alle informatie uit 2BA onder de knop</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #6DBE00" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">2BA.SphinxDemo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">2BA DaaS Reference Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/unifeed/architecture.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ba-daas-reference-architecture">
+<h1>2BA DaaS Reference Architecture<a class="headerlink" href="#ba-daas-reference-architecture" title="Link to this heading"></a></h1>
+<p>Text only available in engish</p>
+<section id="data-as-a-service">
+<h2>Data as a Service<a class="headerlink" href="#data-as-a-service" title="Link to this heading"></a></h2>
+<p>The 2BA DaaS reference architecture offers a <strong>consistent</strong>, <strong>fast</strong> and <strong>safe</strong> way to communicate with the 2BA database and is, where possible, based on <strong>(open) standards</strong>. For most components in this architecture 2BA has defined its own implementation, but because of the (open) standards, it is possible for some components to be defined by third parties.</p>
+<p>This architecture also offers the ability for the customer to transparently connect multiple service providers.</p>
+<p>Below is a short description of the individual components.</p>
+</section>
+<section id="webservices">
+<h2>Webservices<a class="headerlink" href="#webservices" title="Link to this heading"></a></h2>
+<p>Webservices are the basis for the Data as a Service architecture. The <a class="reference external" href="https://www.2ba.nl/documentatie/webservices">2BA Webservices</a> offer elementary, fast and lightweight services to access the product- and article data from the 2BA. The services support both JSON and SOAP. You can easily integrate your system with these webservices so as to always have the latest data available.</p>
+</section>
+<section id="catalogue">
+<h2>Catalogue<a class="headerlink" href="#catalogue" title="Link to this heading"></a></h2>
+<p>A catalogue offers the same data as the webservices, but provides them in a User Interface. 2BA’s catalogue implementation is <a class="reference external" href="https://unifeed.2ba.nl/">Unifeed</a>. You can find the complete Unifeed documentation <a class="reference external" href="https://www.2ba.nl/documentatie/unifeed">here</a>. Using Unifeed, the end-user can directly search and query the 2BA database. It is also possible to compose selection lists. Unifeed offers several interfaces (OCI, JSON) to easily pull singular data or selection lists to the customer’s business software.</p>
+</section>
+<section id="openid">
+<h2>OpenID<a class="headerlink" href="#openid" title="Link to this heading"></a></h2>
+<p>OpenID is an open standard for the authentication of users. 2BA customers can log into all 2BA applications with the same 2BA credentials (username/password). The possibilities of OpenID, however, extend much further. Third parties could also use 2BA OpenID to authenticate their application. The advantage for the user is that he/she does not have to remember his/her credentials for each application/website. It would also be possible for 2BA to support other trusted OpenID providers. This could, in theory, enable you to log into 2BA using, for example, your Google account.</p>
+</section>
+<section id="oauth-2-0">
+<h2>OAuth 2.0<a class="headerlink" href="#oauth-2-0" title="Link to this heading"></a></h2>
+<p>OAuth is a widely accepted internet standard for authorization. In short, this means that you authorize an application once to use your credentials to retrieve data from 2BA. You enter your credentials (username/password) at 2BA one time and authorize the application. In response, the application receives a “Token”. The application will then use this token in all future requests to 2BA. The “Token” is used by 2BA to identify the application and user that requested the data.<br />
+Using this method, a form of <strong>Single-Sign-On</strong> can be achieved. The user can at all times revoke the authorization, invalidating the “Token” in the process.</p>
+</section>
+<section id="erp-or-calculation-application">
+<h2>ERP or Calculation application<a class="headerlink" href="#erp-or-calculation-application" title="Link to this heading"></a></h2>
+<p>Eventually, the 2BA data needs to be used somewhere. Chances are that this happens in an ERP or Calculation application. These applications can choose whether to use the 2BA REST Services or Unifeed to retrieve the data. 2BA itself does not produce ERP or Calculation applications. We do have a demo application available to demonstrate the functionality with both interface methods. You can download the <a class="reference external" href="https://www.2ba.nl/documentatie/unifeed/democalc">2BA DemoCalc</a> application.</p>
+</section>
+<section id="supplier-conditions">
+<h2>Supplier Conditions<a class="headerlink" href="#supplier-conditions" title="Link to this heading"></a></h2>
+<p>The majority of the prices in 2BA’s systems tend to be gross prices. It is also possible for customers to have obtained supplier conditions (surcharges). These conditions vary per customer and have to be stored and retrieved separately. To this end, we developed the 2BA Condition Service. The 2BA Condition Services can run either locally at the customer’s location, or centralized at 2BA. Unifeed seamlessly integrates with the 2BA Condition Service, enabling Unifeed to display and adopt the net prices.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, TTT.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
