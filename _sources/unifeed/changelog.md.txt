@@ -1,9 +1,7 @@
 
 # Changelog
 
-### Versionnumbering rules:
-
-<major>.<minor>.<patch>
+## Versionnumbering rules: 
 
 -   Major number will increase for updates with **breaking changes**
 -   Minor number will increase for updates with functional changes (additions) but **without breaking changes**

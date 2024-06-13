@@ -1,8 +1,8 @@
-# 2BA DaaS Reference Architecture
+# Reference Architecture
 
 Text only available in engish
 
-### Data as a Service
+### Data as a Service (DaaS)
 
 The 2BA DaaS reference architecture offers a **consistent**, **fast** and **safe** way to communicate with the 2BA database and is, where possible, based on **(open) standards**. For most components in this architecture 2BA has defined its own implementation, but because of the (open) standards, it is possible for some components to be defined by third parties.
 
