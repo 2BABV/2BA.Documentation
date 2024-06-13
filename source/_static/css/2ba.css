@@ -15,14 +15,6 @@
     color: #fff;
 }
 
-.wy-menu-vertical button {
-    color: #6DBE00;
-}
-
-.wy-menu-vertical button:hover {
-    color: #fff;
-}
-
 .wy-menu-vertical a:hover,
 .wy-nav-content button:hover {
     background: #6DBE00;
@@ -30,6 +22,14 @@
 
 .wy-menu-vertical li.current a:hover {
     background: #6dbe00;
+    color: #fff;
+}
+
+.wy-menu-vertical li button.toctree-expand {
+    color: #6DBE00;
+}
+
+.wy-menu-vertical li button.toctree-expand:hover {
     color: #fff;
 }
 
