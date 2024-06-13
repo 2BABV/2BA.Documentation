@@ -4,16 +4,33 @@
 
 .wy-side-scroll {
     background-color: #195AA7;
-    color: white;
+    color: #fff;
 }
 
 .wy-nav-side {
     padding-bottom: 0;
 }
 
+.wy-menu-vertical a {
+    color: #fff;
+}
+
+.wy-menu-vertical button {
+    color: #6DBE00;
+}
+
+.wy-menu-vertical button:hover {
+    color: #fff;
+}
+
 .wy-menu-vertical a:hover,
 .wy-nav-content button:hover {
     background: #6DBE00;
+}
+
+.wy-menu-vertical li.current a:hover {
+    background: #6dbe00;
+    color: #fff;
 }
 
 .wy-nav-content {
@@ -31,6 +48,10 @@
 .wy-nav-content h5,
 .wy-nav-content h6 {
     color: #195AA7;   
+}
+
+.wy-menu-vertical a {
+    color: #fff;
 }
 
 .wy-nav-content button {
