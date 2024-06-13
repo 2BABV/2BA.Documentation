@@ -16,5 +16,5 @@ How does 2BA work?
 Installation and assembly companies can import product and related wholesale data from the 2BA datapool into their own software packages. This can be done, for example, on the basis of a selection profile pre-set by 2BA. In addition, a growing number of software parties supports the Unifeed search engine developed by 2BA. This gives you the opportunity of searching for products online in the 2BA datapool, from your own software, and copying the selected items directly into your application. Here too, the filter option on ETIM product classes and/or features offers an important tool with which to find the right product fast. 2BA has partnered with a growing number of leading software houses of ERP and project management applications on the ETIM Classification and automated/semi-automated file exchange with the datapool.
 
 .. toctree::
-   uob
+   introduction
 
