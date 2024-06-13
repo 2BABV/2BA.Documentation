@@ -1,5 +1,6 @@
 # Handleiding
 
 ```{toctree}
-    search.md
-    productdetails.md
+:maxdepth: -1
+search.md
+productdetails.md
