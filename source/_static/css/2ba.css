@@ -11,7 +11,8 @@
     padding-bottom: 0;
 }
 
-.wy-menu-vertical a:hover {
+.wy-menu-vertical a:hover,
+.wy-nav-content button:hover {
     background: #6DBE00;
 }
 
@@ -38,6 +39,8 @@
     padding: 10px 30px 10px 16px;
     position: relative;
     transition: 0.2s;
+    color: #fff;
+    border-radius: .25rem;
 }
 
 .wy-nav-content td {
