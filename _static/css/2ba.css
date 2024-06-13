@@ -14,7 +14,8 @@
 .wy-menu-vertical a,
 .wy-menu-vertical a:hover button.toctree-expand,
 .wy-menu-vertical li.current > a:hover button.toctree-expand, 
-.wy-menu-vertical li.on a:hover button.toctree-expand {
+.wy-menu-vertical li.on a:hover button.toctree-expand,
+.wy-menu-vertical li button.toctree-expand:hover {
     color: #fff;
 }
 
@@ -28,20 +29,13 @@
     color: #fff;
 }
 
-.wy-menu-vertical li button.toctree-expand {
+.wy-menu-vertical li button.toctree-expand,
+.wy-nav-content a {
     color: #6DBE00;
-}
-
-.wy-menu-vertical li button.toctree-expand:hover {
-    color: #fff;
 }
 
 .wy-nav-content {
     max-width: 1000px;
-}
-
-.wy-nav-content a {
-    color: #6DBE00;
 }
 
 .wy-nav-content h1,
@@ -51,10 +45,6 @@
 .wy-nav-content h5,
 .wy-nav-content h6 {
     color: #195AA7;   
-}
-
-.wy-menu-vertical a {
-    color: #fff;
 }
 
 .wy-nav-content button {
@@ -68,5 +58,5 @@
 }
 
 .wy-table-responsive table td {
-    background-color: transparent;
+    background-color: transparent !important;
 }
