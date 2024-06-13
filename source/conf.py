@@ -35,7 +35,7 @@ html_context = {
     'theme_display_version': True,
 }
 
-html_logo = "_static/images/logo.svg"
+html_logo = "_static/images/logo.png"
 html_favicon = "_static/images/favicon.ico"
 
 httpexample_scheme = 'https'
