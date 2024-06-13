@@ -12,7 +12,8 @@ An application (the client) wishing to communicate with the services requires a 
 
 **If you want to use Webservices you will need a clientid/secret and a 2BA username/password.**
 
-Are you a software developer and not yet registered with 2BA? Click the button on the right. After you register, we can send you a letter of intent, which, when signed and received by us the ClientID and ClientSecret can be requested.
+Are you a software developer and not yet registered with 2BA? Click the button on the right. After you register, we can send you a letter of intent, which, when signed and received by us the ClientID and ClientSecret can be requested. 
+<button name="button" onclick="https://my.2ba.nl/Registration/Start?reason=Invalid&type=Softwarebedrijf">Register with 2BA</button>
 
 Registered 2BA clients can request a ClientId and ClientSecret for use with 2BA webservice via: [Request ClientId and ClientSecret.](mailto:helpdesk%402ba.nl?cc=ec%402ba.nl;th%402ba.nl&subject=Request%20ClientId%20and%20ClientSecret%20for%20use%20with%202BA%20web%20service.&body=Dear%20applicant%2C%20%0D%0A%0D%0AWe%20need%20a%20number%20of%20details%20to%20process%20the%20ClientId%20and%20ClientSecret%20application.%20%0D%0ACompany%20Name%3A%20%0D%0AApplicant%20Name%3A%20%0D%0AApplicant%20E-mail%3A%0D%0APhone%20number%3A%20%0D%0A%0D%0ARelationship%20type%3A%20Software%20supplier%20%2F%20Installer%20%2F%20Data%20supplier%20%2F%20Wholesale%2F%20Webshop%20%2F%20others%20*%20%0D%0A*%20strike%20out%20what%20does%20not%20apply.%20%0D%0A%0D%0AIf%20the%20application%20is%20for%20another%20company%2C%20then%20provide%20the%20company%20name%20and%20the%20contact%20person%20for%20whom%20you%20are%20making%20the%20request%20for.%0D%0A%0D%0AYours%20sincerely%20%0D%0A2BA%20support%20team%20%0D%0A)
 
