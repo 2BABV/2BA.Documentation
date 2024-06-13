@@ -3,6 +3,6 @@
 Here you will find documentation on the following topics:
 
 ```{toctree}
-   webservices/index
-   unifeed/index
+webservices/index.md
+unifeed/index.md
 
