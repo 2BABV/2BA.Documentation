@@ -29,15 +29,25 @@ import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
+html_theme_options = {
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_nav_header_background': '#6DBE00',
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False,
+}
 
 html_context = {
     'theme_logo_only': True,
     'theme_display_version': True,
-    'style_nav_header_background': '#6DBE00',
 }
 
 html_logo = "_static/images/logo.png"
-html_favicon = "_static/images/favicon.ico"
+html_favicon = "_static/images/favicon.png"
 
 httpexample_scheme = 'https'
 
