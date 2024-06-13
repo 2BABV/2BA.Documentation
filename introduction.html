@@ -7,7 +7,7 @@
   <title>Introductie Webservices &mdash; 2BA.SphinxDemo 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="_static/css/2ba.css?v=139d6a6d" />
+      <link rel="stylesheet" type="text/css" href="_static/css/2ba.css?v=c8159815" />
 
   
     <link rel="shortcut icon" href="_static/favicon.png"/>
@@ -47,7 +47,15 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introductie Webservices</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introductie Webservices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#access">Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versioning">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#current-service-endpoints-and-soap-wsdl">Current Service Endpoints and SOAP WSDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -79,6 +87,53 @@
 <p><em>Text only available in english</em></p>
 <p>The 2BA Webservices are elementary, lightweight and fast services to allow your systems to integrate with the 2BA database. We offer services to search our database, retrieve product- or article details and services to, for example, download your selection profiles automatically. Our webservice is not intended for bulk downloads, it is intended to update a targeted number of articles quickly. For bulk downloads we recommend direct downloads or the use of 2BA selection profiles.</p>
 <p>We offer our services via JSON (Rest services) and SOAP (XML service). The advantages of JSON in comparison to SOAP are, among others, reduced overhead and simplicity. For both JSON and SOAP services, most development environments either offer libraries or have the support built-in.</p>
+<section id="access">
+<h2>Access<a class="headerlink" href="#access" title="Link to this heading"></a></h2>
+<p>An application (the client) wishing to communicate with the services requires a ClientId and accompanying ClientSecret. Each application requires its own ClientId. The ClientId and secret of the application are used in conjunction with the username and password during authentication. With the ClientId name we can identfy the application or organisation who uses our webservices. Your software might already have a ClientId and secret in use, please contact your software partner..</p>
+<p><strong>If you want to use Webservices you will need a clientid/secret and a 2BA username/password.</strong></p>
+<p>Are you a software developer and not yet registered with 2BA? Click the button on the right. After you register, we can send you a letter of intent, which, when signed and received by us the ClientID and ClientSecret can be requested.</p>
+<p>Registered 2BA clients can request a ClientId and ClientSecret for use with 2BA webservice via: <a class="reference external" href="mailto:helpdesk&#37;&#52;&#48;2ba&#46;nl?cc=ec&#37;&#52;&#48;2ba&#46;nl;th&#37;&#52;&#48;2ba&#46;nl&amp;amp;subject=Request%20ClientId%20and%20ClientSecret%20for%20use%20with%202BA%20web%20service&#46;&amp;amp;body=Dear%20applicant%2C%20%0D%0A%0D%0AWe%20need%20a%20number%20of%20details%20to%20process%20the%20ClientId%20and%20ClientSecret%20application&#46;%20%0D%0ACompany%20Name%3A%20%0D%0AApplicant%20Name%3A%20%0D%0AApplicant%20E-mail%3A%0D%0APhone%20number%3A%20%0D%0A%0D%0ARelationship%20type%3A%20Software%20supplier%20%2F%20Installer%20%2F%20Data%20supplier%20%2F%20Wholesale%2F%20Webshop%20%2F%20others%20*%20%0D%0A*%20strike%20out%20what%20does%20not%20apply&#46;%20%0D%0A%0D%0AIf%20the%20application%20is%20for%20another%20company%2C%20then%20provide%20the%20company%20name%20and%20the%20contact%20person%20for%20whom%20you%20are%20making%20the%20request%20for&#46;%0D%0A%0D%0AYours%20sincerely%20%0D%0A2BA%20support%20team%20%0D%0A">Request ClientId and ClientSecret<span>&#46;</span></a></p>
+</section>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h2>
+<p>To secure our Webservices, we use the <a class="reference external" href="https://www.2ba.nl/documentatie/webservices/oauth2">open standard OAuth2</a>. In a nutshell, this means that a previously acquired “accesstoken” is sent in an HTTP-header when invoking the service. The authentication can be built manually, but there are plenty of libraries available for this purpose.</p>
+<p>View the code examples for authorizing and invoking the Webservices: <a class="reference external" href="https://www.2ba.nl/documentatie/webservices/oauth2/resource-owner-password-credentials-grant">Example 1: Resource Owner Password Credentials Grant</a> and <a class="reference external" href="https://www.2ba.nl/documentatie/webservices/oauth2/authorization-code">Example 2: Authorization Code</a></p>
+</section>
+<section id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Link to this heading"></a></h2>
+<p>The structure of a service URL is: http(s)://api.2ba.nl/<major versionnumber>/<protocol>/<servicename>/<function>?<parameters><br />
+Example: <a class="reference external" href="https://api.2ba.nl/1/json/Product/Search?query=kabelgoot">https://api.2ba.nl/1/json/Product/Search?query=kabelgoot</a></p>
+</section>
+<section id="versioning">
+<h2>Versioning<a class="headerlink" href="#versioning" title="Link to this heading"></a></h2>
+<p>The versioning is based on “<a class="reference external" href="http://semver.org/">semantic versioning</a>“. This means that there will be no breaking changes within each major version number; the endpoint remains the same. For more information, see the <a class="reference external" href="https://www.2ba.nl/documentatie/webservices/changelog">changelog</a>.</p>
+</section>
+<section id="current-service-endpoints-and-soap-wsdl">
+<h2>Current Service Endpoints and SOAP WSDL<a class="headerlink" href="#current-service-endpoints-and-soap-wsdl" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Production</p></th>
+<th class="head"><p>Bèta</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>json</p></td>
+<td><p>https://api.2ba.nl/<strong>1</strong>/json/{service}/{function}</p></td>
+<td><p>https://api.<em><strong>beta</strong></em>.2ba.nl/<strong>1</strong>/json/{service}/{function}</p></td>
+</tr>
+<tr class="row-odd"><td><p>soap</p></td>
+<td><p>https://api.2ba.nl/<strong>1</strong>/soap/{service}?SingleWsdl</p></td>
+<td><p>https://api.<em><strong>beta</strong></em>.2ba.nl/<strong>1</strong>/soap/{service}?SingleWsdl</p></td>
+</tr>
+</tbody>
+</table>
+<p>The service endpoint is constructed with only the major version number in it. E.g.: <a class="reference external" href="https://api.2ba.nl/1/json/Product/Search">https://api.2ba.nl/<strong>1</strong>/json/Product/Search</a></p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>To give you an impression of the API, we have provided a small C# code sample in which the function DetailsByGLNAndTradeItemId from the Product service is invoked via JSON.</p>
+</section>
 </section>
 
 
