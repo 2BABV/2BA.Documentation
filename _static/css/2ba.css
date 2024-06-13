@@ -4,6 +4,7 @@
 
 .wy-side-scroll {
     background-color: #195AA7;
+    color: white;
 }
 
 .wy-nav-side {
@@ -18,6 +19,13 @@
     max-width: 1000px;
 }
 
+.wy-nav-content a {
+    color: #6DBE00;
+}
+
 h1,h2,h3,h4,h5,h6 {
     color: #195AA7;   
+}
+table td {
+    background-color: transparent;
 }
