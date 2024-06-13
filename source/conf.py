@@ -31,7 +31,7 @@ html_static_path = ['_static']
 
 html_theme_options = {
     'display_version': True,
-    'prev_next_buttons_location': 'bottom',
+    'prev_next_buttons_location': 'none',
     'style_nav_header_background': '#6DBE00',
     # Toc options
     'collapse_navigation': False,
