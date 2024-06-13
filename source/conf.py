@@ -41,6 +41,10 @@ html_theme_options = {
     'titles_only': False,
 }
 
+html_css_files = [
+    '_static/css/2ba.css',
+]
+
 html_context = {
     'theme_logo_only': True,
     'theme_display_version': True,
