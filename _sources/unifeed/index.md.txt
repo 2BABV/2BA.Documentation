@@ -1,6 +1,6 @@
 # Unifeed
 
-### Alle informatie uit 2BA onder de knop
+** Alle informatie uit 2BA onder de knop **
 
 Unifeed biedt een gebruikersinterface om snel te zoeken en te filteren binnen de 2BA datapool. Daarnaast biedt Unifeed diverse mogelijkheden om product- en/of handelsgegevens via Webservices over te nemen naar bijvoorbeeld de eigen calculatie- of bestelsoftware. In combinatie met de Online Conditie Server kan er op basis van conditieregels ook **nettoprijsinformatie** en/of **voorraadinformatie** getoond worden.
 
@@ -15,7 +15,7 @@ Unifeed is een onderdeel uit de 2BA DaaS referentie architectuur. Voor een impre
 <button class="btn" name="button" onclick="https://unifeed.2ba.nl/">Naar Unifeed</button>
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 manual/index.md
 architecture.md
 changelog.md
